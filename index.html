@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CURSO</th>
+                <th>UNIVERSIDAD</th>
+                <th>PETICIÓN</th>
+                <th>GRADO</th>
+                <th>CENTRO</th>
+                <th>ÁREA</th>
+                <th>GENERAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in tabla %}
+        <tr>
+            <td>{{ nota.curso }}</td>
+            <td>{{ nota.universidad }}</td>
+            <td>{{ nota.peticion }}</td>
+            <td>{{ nota.grado }}</td>
+            <td>{{ nota.centro }}</td>
+            <td>{{ nota.area }}</td>
+            <td>{{ nota.general }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

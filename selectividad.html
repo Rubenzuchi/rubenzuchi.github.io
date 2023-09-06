@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form method="post">
+        <input autocomplete="off" autofocus name="notas" placeholder="Nota de 1 de bach" type="text" value="{{nota1}}">
+        <input autocomplete="off" autofocus name="notas" placeholder="Nota 2 de bach" type="text" value="{{nota2}}">
+        <input autocomplete="off" autofocus name="notas" placeholder="Nota examen obligatorio 1" type="text" value="{{examen1}}">
+        <input autocomplete="off" autofocus name="notas" placeholder="Nota examen obligatorio 2" type="text" value="{{examen2}}">
+        <input autocomplete="off" autofocus name="notas" placeholder="Nota examen obligatorio 3" type="text" value="{{examen3}}">
+        <input autocomplete="off" autofocus name="notas" placeholder="Nota examen obligatorio 4" type="text" value="{{examen4}}">
+        <input autocomplete="off" autofocus name="notas" placeholder="Nota examen voluntario 1" type="text" value="{{opt1}}">
+        <input autocomplete="off" autofocus name="notas" placeholder="Nota examen voluntario 2" type="text" value="{{opt2}}">
+        <button id ="send" type="submit">Enviar</button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CURSO</th>
+                <th>UNIVERSIDAD</th>
+                <th>PETICIÓN</th>
+                <th>GRADO</th>
+                <th>CENTRO</th>
+                <th>ÁREA</th>
+                <th>GENERAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in tabla %}
+        <tr>
+            <td>{{ nota.curso }}</td>
+            <td>{{ nota.universidad }}</td>
+            <td>{{ nota.peticion }}</td>
+            <td>{{ nota.grado }}</td>
+            <td>{{ nota.centro }}</td>
+            <td>{{ nota.area }}</td>
+            <td>{{ nota.general }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
